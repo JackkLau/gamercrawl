@@ -6,7 +6,8 @@ from gamersky.items import ImageItem
 class NewsSpider(scrapy.Spider):
     name = "news"
     allowed_domains = ["gamersky.com"]
-    start_urls = ["https://www.gamersky.com/news/202312/1680626.shtml"]
+    start_urls = ["https://www.gamersky.com/news/202312/1684515.shtml"]
+    # start_urls = ["https://www.gamersky.com/news/202312/1680626.shtml"]
     # start_urls = ["https://www.gamersky.com/news/202312/1682153.shtml"]
     # start_urls = ["https://www.gamersky.com/news/202312/1679700.shtml"]
     # start_urls = ["https://www.gamersky.com/news/202312/1680626.shtml"]

@@ -51,6 +51,14 @@ class NewsImagesPipeline(ImagesPipeline):
         f = open(absolute_path, 'wb')  # use 'b' to write binary data.
         f.write(data)
 
+    def persist_img(self, key, data, info):
+        root, ext = os.path.splitext(key)
+        absolute_path = self.store._get_filesystem_path(key)
+        print(absolute_path)
+        # self.store._mkdir(os.path.dirname(absolute_path), info)
+        f = open(absolute_path, 'w')  # use 'b' to write binary data.
+        f.write(data)
+
     def image_downloaded(self, response, request=None, info=None, *, item=None):
         checksum = None
         print(request)
@@ -64,6 +72,7 @@ class NewsImagesPipeline(ImagesPipeline):
             if self.check_gif(image):
                 self.persist_gif(path, response.body, info)
             else:
+                # self.persist_img(path, response.body, info)
                 self.store.persist_file(
                     path, buf, info,
                     meta={'width': width, 'height': height},

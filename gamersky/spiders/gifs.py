@@ -6,7 +6,9 @@ from gamersky.items import ImageItem
 class GifsSpider(scrapy.Spider):
     name = "gifs"
     allowed_domains = ["gamersky.com"]
-    start_urls = ["https://www.gamersky.com/news/202312/1682431.shtml"]
+    start_urls = ["https://www.gamersky.com/news/202312/1684803.shtml"]
+    # start_urls = ["https://www.gamersky.com/news/202312/1683137.shtml"]
+    # start_urls = ["https://www.gamersky.com/news/202312/1682431.shtml"]
 
     def parse(self, response):
         print("parse response", response.status)
